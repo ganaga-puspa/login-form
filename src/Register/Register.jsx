@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import MyButton from "../Component/MyButton"
 
 import {
   Container,
@@ -28,14 +29,13 @@ const FormRegister = (props) => {
     <div>
       <br />
       <div
-        className="center"
+        // className="center"
         style={{ margin: "20px", textAlign: "center", float: "center" }}
       >
         {/* <Col lg={4}></Col> */}
-        <h3 style={{ color: "#0d6efd" }}>Registration Form</h3>
         <Col lg={12}>
           <div
-            className="center"
+            // className="center"
             style={{
               margin: "auto",
               width: "50%",
@@ -45,10 +45,13 @@ const FormRegister = (props) => {
             <Card
               style={{
                 margin: "auto",
-                width: "35%",
+                width: "60%",
+                borderColor:'Red',
                 padding: "10px",
               }}
             >
+        <h3 style={{ color: "#0d6efd" }}>Registration Form</h3>
+
               <form onSubmit={handleSubmit}>
                 <FormGroup>
                   <Row>
@@ -56,14 +59,16 @@ const FormRegister = (props) => {
                       <b>
                         <Label>YourName</Label>
                       </b>
-                      <Input
+                      <div className="center"> <Input
                         type="text"
                         // required
                         id="name"
                         value={values.name}
                         onChange={handleChange}
                         name="name"
-                      />
+                        style={{width:"100%"}}
+                      /></div>
+                     
                       {errors.name && touched.name && (
                         <div style={{ color: "red" }} id="name">
                           {errors.name}
@@ -156,7 +161,11 @@ const FormRegister = (props) => {
                 </FormGroup>
                 <br />
                 <div>
-                  <Button color="primary">Create Account</Button>
+                  {/* <Button color="primary">Create Account</Button> */}
+                  <MyButton bttxtLabel="Submit" btType="button"
+                        btheight="50px"
+					            	btfontsize="12px"
+                    />
                 </div>
                 <br />
               </form>
