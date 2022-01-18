@@ -50,7 +50,7 @@ const FormRegister = (props) => {
                 padding: "10px",
               }}
             >
-        <h3 style={{ color: "#0d6efd" }}>Registration Form</h3>
+        <h3 style={{ color: "#0d6efd" }}>Registration</h3>
 
               <form onSubmit={handleSubmit}>
                 <FormGroup>
